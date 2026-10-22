@@ -1,0 +1,26 @@
+{
+  "computer-science-study": {
+    "order": 1,
+    "category": "Education",
+    "description": {
+      "en": "Study programming, algorithms and software development.",
+      "it": "Studia programmazione, algoritmi e sviluppo software."
+    }
+  },
+  "home-gardening": {
+    "order": 2,
+    "category": "Hobby",
+    "description": {
+      "en": "Grow vegetables, care for plants and plan seasonal gardening activities.",
+      "it": "Coltiva ortaggi, cura le piante e organizza le attività stagionali."
+    }
+  },
+  "software-engineering": {
+    "order": 3,
+    "category": "Work",
+    "description": {
+      "en": "Support frontend development, software architecture and code quality.",
+      "it": "Supporta lo sviluppo frontend, le decisioni architetturali e la qualità del codice."
+    }
+  }
+}

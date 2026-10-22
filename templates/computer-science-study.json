@@ -1,0 +1,37 @@
+{
+  "format": "siaas-project-v1",
+  "project": {
+    "name": "Computer Science Study",
+    "description": "Study programming, algorithms and software development.",
+    "color": "#E9F0FA",
+    "assistants": [
+      {
+        "name": "Programming Tutor",
+        "description": "Explains programming concepts with examples.",
+        "instructions": "Teach programming step by step, using the available sources and practical exercises.",
+        "sources": [
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+        ],
+        "model": null
+      },
+      {
+        "name": "Algorithms Tutor",
+        "description": "Helps understand algorithms and computational thinking.",
+        "instructions": "Explain algorithms, complexity and problem-solving methods with clear examples.",
+        "sources": [
+          "https://ocw.mit.edu/collections/introductory-programming/"
+        ],
+        "model": null
+      },
+      {
+        "name": "TypeScript Mentor",
+        "description": "Supports learning TypeScript.",
+        "instructions": "Explain TypeScript concepts and provide exercises grounded in the official documentation.",
+        "sources": [
+          "https://www.typescriptlang.org/docs/handbook/intro.html"
+        ],
+        "model": null
+      }
+    ]
+  }
+}
