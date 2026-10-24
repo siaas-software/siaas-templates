@@ -30,3 +30,17 @@ The consumers keep generated snapshots for offline use and reproducible builds. 
 
 Original code and content in this repository are licensed under [MIT](LICENSE).
 Third-party dependencies retain their own licenses.
+
+## Structured analysis templates — not yet merged
+
+**Production Planning** and **Personal Finance** are implemented in
+[draft PR #1](https://github.com/siaas-software/siaas-templates/pull/1), with the
+shared analytical engine in [Personal draft PR #4](https://github.com/siaas-software/siaas-personal/pull/4).
+They are not part of the three-template `main` catalog above. Read the
+[verified configuration, input datasets, examples and limitations](docs/structured-analysis-templates.md).
+Importing their JSON into an older app does not add the engine. Consumer catalogs
+and stable releases must adopt the reviewed commit separately.
+
+This repository has no npm runtime dependencies. Its MIT license covers original
+template instructions and repository code, not user data, referenced websites or
+model weights. No private data is included in the official template files.
