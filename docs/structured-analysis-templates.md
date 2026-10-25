@@ -1,12 +1,9 @@
-# Structured analysis templates — draft preview
+# Structured analysis templates
 
-Verified 24 October 2026 against [draft PR #1](https://github.com/siaas-software/siaas-templates/pull/1),
-commit `7ec5a819be9051242f1b9f94317629f593f1d265`. These definitions are not on
-`main` and are not automatically available in a stable application or on the
-public site. They require the shared engine in [Personal draft PR #4](https://github.com/siaas-software/siaas-personal/pull/4),
-commit `b76f6ff5f547d2f5833df34877d78af911ed9b65`. Both PRs remain unmerged.
+Production Planning and Personal Finance provide guidance for local analysis of
+XLSX and CSV datasets using the shared Structured Data Analysis engine.
 
-## Verified portable configuration
+## Portable configuration
 
 Both JSON files use `format: siaas-project-v1`. Each defines one project with a
 name, description, project color and one assistant with name, description,

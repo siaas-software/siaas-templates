@@ -7,8 +7,8 @@ The canonical source for the Personal project templates used by [SIAAS Personal]
 | Template | Assistants | Importable file |
 | --- | --- | --- |
 | Computer Science Study | 3 | [computer-science-study.json](templates/computer-science-study.json) |
-| Home Gardening | 3 | [home-gardening.json](templates/home-gardening.json) |
-| Software Engineering | 3 | [software-engineering.json](templates/software-engineering.json) |
+| Production Planning | 1 | [production-planning.json](templates/production-planning.json) |
+| Personal Finance | 1 | [personal-finance.json](templates/personal-finance.json) |
 
 Download a JSON file and import it from Templates in SIAAS Personal. Files retain `siaas-project-v1`. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
 
@@ -31,15 +31,10 @@ The consumers keep generated snapshots for offline use and reproducible builds. 
 Original code and content in this repository are licensed under [MIT](LICENSE).
 Third-party dependencies retain their own licenses.
 
-## Structured analysis templates — not yet merged
+## Structured analysis templates
 
-**Production Planning** and **Personal Finance** are implemented in
-[draft PR #1](https://github.com/siaas-software/siaas-templates/pull/1), with the
-shared analytical engine in [Personal draft PR #4](https://github.com/siaas-software/siaas-personal/pull/4).
-They are not part of the three-template `main` catalog above. Read the
-[verified configuration, input datasets, examples and limitations](docs/structured-analysis-templates.md).
-Importing their JSON into an older app does not add the engine. Consumer catalogs
-and stable releases must adopt the reviewed commit separately.
+Production Planning and Personal Finance use the shared analytical engine. Read the
+[input datasets, examples and limitations](docs/structured-analysis-templates.md).
 
 This repository has no npm runtime dependencies. Its MIT license covers original
 template instructions and repository code, not user data, referenced websites or
@@ -72,6 +67,4 @@ or a substitute for investment, tax or legal expertise.
 The application ships an offline snapshot pinned to this repository's commit.
 Adding files here alone does not update installed applications: maintainers must
 run the app's `templates:sync -- --catalog <checkout>/catalog.json --ref <commit>`
-and commit both its generated snapshot and `templates-source.json`. This feature
-requires the companion Structured Data Analysis application changes. Existing
-releases can import the guidance but cannot perform the new deterministic operations.
+and commit both its generated snapshot and `templates-source.json`. Existing projects and user-saved configurations remain unchanged when the official catalog changes.
