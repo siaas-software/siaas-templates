@@ -7,8 +7,8 @@ The canonical source for the Personal project templates used by [SIAAS Personal]
 | Template | Assistants | Importable file |
 | --- | --- | --- |
 | Computer Science Study | 3 | [computer-science-study.json](templates/computer-science-study.json) |
-| Home Gardening | 3 | [home-gardening.json](templates/home-gardening.json) |
-| Software Engineering | 3 | [software-engineering.json](templates/software-engineering.json) |
+| Production Planning | 1 | [production-planning.json](templates/production-planning.json) |
+| Personal Finance | 1 | [personal-finance.json](templates/personal-finance.json) |
 
 Download a JSON file and import it from Templates in SIAAS Personal. Files retain `siaas-project-v1`. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
 
@@ -58,6 +58,4 @@ or a substitute for investment, tax or legal expertise.
 The application ships an offline snapshot pinned to this repository's commit.
 Adding files here alone does not update installed applications: maintainers must
 run the app's `templates:sync -- --catalog <checkout>/catalog.json --ref <commit>`
-and commit both its generated snapshot and `templates-source.json`. This feature
-requires the companion Structured Data Analysis application changes. Existing
-releases can import the guidance but cannot perform the new deterministic operations.
+and commit both its generated snapshot and `templates-source.json`. Existing projects and user-saved configurations remain unchanged when the official catalog changes.
