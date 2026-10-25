@@ -7,8 +7,8 @@ The canonical source for the Personal project templates used by [SIAAS Personal]
 | Template | Assistants | Importable file |
 | --- | --- | --- |
 | Computer Science Study | 3 | [computer-science-study.json](templates/computer-science-study.json) |
-| Home Gardening | 3 | [home-gardening.json](templates/home-gardening.json) |
-| Software Engineering | 3 | [software-engineering.json](templates/software-engineering.json) |
+| Production Planning | 1 | [production-planning.json](templates/production-planning.json) |
+| Personal Finance | 1 | [personal-finance.json](templates/personal-finance.json) |
 
 Download a JSON file and import it from Templates in SIAAS Personal. Files retain `siaas-project-v1`. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
 
@@ -30,3 +30,32 @@ The consumers keep generated snapshots for offline use and reproducible builds. 
 
 Original code and content in this repository are licensed under [MIT](LICENSE).
 Third-party dependencies retain their own licenses.
+
+## Structured Data Analysis templates
+
+`production-planning` and `personal-finance` use SIAAS Personal's local Structured
+Data Analysis engine. Import the portable JSON through Templates, create a project,
+choose an installed local Ollama model, and upload XLSX/CSV files in the assistant's
+Knowledge. Review and confirm each worksheet's header, column types and currency/unit
+partitions, then explicitly configure any cross-file relationships. Dataset values,
+local paths and confirmed mappings are never included in these templates.
+
+Production Planning covers orders versus stock, BOM requirements, outstanding
+purchase orders, missing product codes and pallet estimates. Recipe quantity bases,
+units, stock semantics and join cardinality must be verified. It is not a scheduling
+or workforce optimization solver. Personal Finance covers transactions, spending,
+budgets, duplicate candidates and savings analysis. Confirm debit/credit sign conventions,
+period completeness and currencies; absent transactions are not zero.
+
+Example: ask "Compare orders with inventory and show shortages" after mapping
+product identifiers and aggregating each side at product grain. For finance ask
+"Group spending by month, category and currency" after confirming the transaction
+amount convention. Partial datasets remain useful; assistants explain unavailable
+inputs instead of inventing them. Formula caches may be stale and need explicit
+acceptance in Knowledge. Financial analysis is factual assistance, not a guarantee
+or a substitute for investment, tax or legal expertise.
+
+The application ships an offline snapshot pinned to this repository's commit.
+Adding files here alone does not update installed applications: maintainers must
+run the app's `templates:sync -- --catalog <checkout>/catalog.json --ref <commit>`
+and commit both its generated snapshot and `templates-source.json`. Existing projects and user-saved configurations remain unchanged when the official catalog changes.

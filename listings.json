@@ -7,20 +7,20 @@
       "it": "Studia programmazione, algoritmi e sviluppo software."
     }
   },
-  "home-gardening": {
-    "order": 2,
-    "category": "Hobby",
-    "description": {
-      "en": "Grow vegetables, care for plants and plan seasonal gardening activities.",
-      "it": "Coltiva ortaggi, cura le piante e organizza le attività stagionali."
-    }
-  },
-  "software-engineering": {
-    "order": 3,
+  "production-planning": {
+    "order": 4,
     "category": "Work",
     "description": {
-      "en": "Support frontend development, software architecture and code quality.",
-      "it": "Supporta lo sviluppo frontend, le decisioni architetturali e la qualità del codice."
+      "en": "Compare production orders, inventory and materials using local structured analysis.",
+      "it": "Confronta ordini, scorte e materiali con analisi strutturata locale."
+    }
+  },
+  "personal-finance": {
+    "order": 5,
+    "category": "Hobby",
+    "description": {
+      "en": "Understand local transactions, budgets and savings with traceable calculations.",
+      "it": "Analizza transazioni, budget e risparmi locali con calcoli verificabili."
     }
   }
 }
