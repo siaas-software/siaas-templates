@@ -31,6 +31,15 @@ The consumers keep generated snapshots for offline use and reproducible builds. 
 Original code and content in this repository are licensed under [MIT](LICENSE).
 Third-party dependencies retain their own licenses.
 
+## Structured analysis templates
+
+Production Planning and Personal Finance use the shared analytical engine. Read the
+[input datasets, examples and limitations](docs/structured-analysis-templates.md).
+
+This repository has no npm runtime dependencies. Its MIT license covers original
+template instructions and repository code, not user data, referenced websites or
+model weights. No private data is included in the official template files.
+
 ## Structured Data Analysis templates
 
 `production-planning` and `personal-finance` use SIAAS Personal's local Structured
