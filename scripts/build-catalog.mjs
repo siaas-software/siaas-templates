@@ -14,6 +14,8 @@ for (const file of (await readdir(new URL("templates/", root))).sort()) {
   const listing = listings[id];
   assert.deepEqual(Object.keys(bundle).sort(), ["format", "project"]);
   assert(project.name && project.description);
+  // Semantic identifiers only: palette values are owned by Personal PROJECT_PALETTES.
+  assert(["mint", "sky", "lavender", "peach", "rose", "lemon", "aqua", "slate"].includes(project.palette), "Invalid project.palette");
   assert.match(project.color, /^#[0-9a-f]{6}$/i);
   assert(project.assistants.length > 0 && project.assistants.length <= 50);
   for (const assistant of project.assistants) {
@@ -27,7 +29,7 @@ for (const file of (await readdir(new URL("templates/", root))).sort()) {
     }
     assert.deepEqual(Object.keys(assistant).sort(), ["description", "instructions", "model", "name", "sources"]);
   }
-  assert.deepEqual(Object.keys(project).sort(), ["assistants", "color", "description", "name"]);
+  assert.deepEqual(Object.keys(project).sort(), ["assistants", "color", "description", "name", "palette"]);
   assert(listing.description.en && listing.description.it && Number.isInteger(listing.order));
   assert(["Education", "Hobby", "Work"].includes(listing.category));
   templates.push({ id, ...bundle, listing });
