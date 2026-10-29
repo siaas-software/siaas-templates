@@ -22,5 +22,29 @@
       "en": "Understand local transactions, budgets and savings with traceable calculations.",
       "it": "Analizza transazioni, budget e risparmi locali con calcoli verificabili."
     }
+  },
+  "construction-cost-analysis": {
+    "order": 6,
+    "category": "Work",
+    "description": {
+      "en": "Analyze construction estimates, bills of quantities and cost differences using local spreadsheets.",
+      "it": "Analizza preventivi, computi metrici e scostamenti dei costi con fogli di calcolo locali."
+    }
+  },
+  "technical-documentation": {
+    "order": 7,
+    "category": "Work",
+    "description": {
+      "en": "Consult technical documents and draft reports, site minutes and summaries from local Knowledge.",
+      "it": "Consulta documenti tecnici e prepara bozze di relazioni, verbali e riepiloghi dalle fonti locali."
+    }
+  },
+  "materials-procurement": {
+    "order": 8,
+    "category": "Work",
+    "description": {
+      "en": "Compare material quantities, supplier quotations and purchase requirements using local data.",
+      "it": "Confronta quantità di materiali, offerte dei fornitori e fabbisogni di acquisto con dati locali."
+    }
   }
 }
