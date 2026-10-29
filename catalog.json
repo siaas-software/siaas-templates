@@ -36,7 +36,8 @@
             ],
             "model": null
           }
-        ]
+        ],
+        "palette": "sky"
       },
       "listing": {
         "order": 1,
@@ -62,7 +63,8 @@
             "model": null,
             "sources": []
           }
-        ]
+        ],
+        "palette": "slate"
       },
       "listing": {
         "order": 4,
@@ -88,7 +90,8 @@
             "model": null,
             "sources": []
           }
-        ]
+        ],
+        "palette": "mint"
       },
       "listing": {
         "order": 5,
@@ -114,7 +117,8 @@
             "model": null,
             "sources": []
           }
-        ]
+        ],
+        "palette": "peach"
       },
       "listing": {
         "order": 6,
@@ -140,7 +144,8 @@
             "model": null,
             "sources": []
           }
-        ]
+        ],
+        "palette": "lavender"
       },
       "listing": {
         "order": 7,
@@ -166,7 +171,8 @@
             "model": null,
             "sources": []
           }
-        ]
+        ],
+        "palette": "aqua"
       },
       "listing": {
         "order": 8,

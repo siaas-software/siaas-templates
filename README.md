@@ -68,3 +68,25 @@ The application ships an offline snapshot pinned to this repository's commit.
 Adding files here alone does not update installed applications: maintainers must
 run the app's `templates:sync -- --catalog <checkout>/catalog.json --ref <commit>`
 and commit both its generated snapshot and `templates-source.json`. Existing projects and user-saved configurations remain unchanged when the official catalog changes.
+
+## Semantic palettes
+
+The optional `project.palette` extension to `siaas-project-v1` names a palette in
+SIAAS Personal's authoritative `src/lib/project-colors.ts` `PROJECT_PALETTES`.
+All six official definitions supply it. Consumers that support the extension use
+its background, foreground and accent; `project.color` remains the compatible
+hexadecimal fallback for older consumers. Bundles without a palette remain valid
+legacy imports. This repository validates identifiers, but does not duplicate the
+application's palette values. Catalog version and bundle format remain unchanged.
+
+| Template | Palette | Importable file |
+| --- | --- | --- |
+| Computer Science Study | sky | [JSON](templates/computer-science-study.json) |
+| Production Planning | slate | [JSON](templates/production-planning.json) |
+| Personal Finance | mint | [JSON](templates/personal-finance.json) |
+| Construction Cost Analysis | peach | [JSON](templates/construction-cost-analysis.json) |
+| Technical Documentation | lavender | [JSON](templates/technical-documentation.json) |
+| Materials & Procurement | aqua | [JSON](templates/materials-procurement.json) |
+
+The legacy hex values are retained unchanged. Adoption is explicit and SHA-pinned;
+a catalog update never changes saved projects or user-customized configurations.
