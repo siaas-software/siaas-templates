@@ -1,0 +1,4 @@
+invoice_number,po_number,line_id,item_code,invoiced_qty,unit_price,currency
+INV-2026-88,PO-2026-104,1,FILT-A,10,18.50,EUR
+INV-2026-88,PO-2026-104,2,SEAL-B,8,7.25,EUR
+INV-2026-89,PO-2026-105,1,BOLT-C,20,0.90,EUR
