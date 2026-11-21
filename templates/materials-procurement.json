@@ -1,5 +1,5 @@
 {
-  "format": "siaas-project-v1",
+  "format": "siaas-project-v2",
   "project": {
     "name": "Materials & Procurement",
     "description": "Compare local construction materials, supplier quotations, quantities and procurement gaps.",
@@ -13,6 +13,15 @@
         "sources": []
       }
     ],
-    "palette": "aqua"
+    "palette": "aqua",
+    "orchestration": {
+      "enabled": false,
+      "instructions": "Coordinate procurement analysis using validated local datasets and authorized sources; do not invent supplier prices, delivery times or quantities.",
+      "assistant_indices": [
+        0
+      ],
+      "max_steps": 4,
+      "share_results": false
+    }
   }
 }

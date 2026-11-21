@@ -1,5 +1,5 @@
 {
-  "format": "siaas-project-v1",
+  "format": "siaas-project-v2",
   "project": {
     "name": "Technical Documentation",
     "description": "Consult local technical documents and prepare reviewable drafts of reports and site minutes.",
@@ -13,6 +13,15 @@
         "sources": []
       }
     ],
-    "palette": "lavender"
+    "palette": "lavender",
+    "orchestration": {
+      "enabled": false,
+      "instructions": "Coordinate technical documentation from each authorized assistant's sources, distinguishing verified citations from suggestions and unverified compliance claims.",
+      "assistant_indices": [
+        0
+      ],
+      "max_steps": 4,
+      "share_results": false
+    }
   }
 }

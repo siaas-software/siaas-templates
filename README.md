@@ -10,7 +10,7 @@ The canonical source for the Personal project templates used by [SIAAS Personal]
 | Production Planning | 1 | [production-planning.json](templates/production-planning.json) |
 | Personal Finance | 1 | [personal-finance.json](templates/personal-finance.json) |
 
-Download a JSON file and import it from Templates in SIAAS Personal. Files retain `siaas-project-v1`. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
+Download a JSON file and import it from Templates in SIAAS Personal. Files now use `siaas-project-v2` (catalog version 2); updated Personal consumers also accept legacy `siaas-project-v1` files. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
 
 Creating a project from a template registers sources even offline. Supported pages are fetched and indexed locally when available; failed or pending sources can be retried from Knowledge. Source enablement is local; all imported sources start enabled. These links reference third-party pages, whose availability and extraction restrictions may change.
 
@@ -71,13 +71,13 @@ and commit both its generated snapshot and `templates-source.json`. Existing pro
 
 ## Semantic palettes
 
-The optional `project.palette` extension to `siaas-project-v1` names a palette in
+The optional `project.palette` extension introduced in `siaas-project-v1` names a palette in
 SIAAS Personal's authoritative `src/lib/project-colors.ts` `PROJECT_PALETTES`.
 All six official definitions supply it. Consumers that support the extension use
 its background, foreground and accent; `project.color` remains the compatible
 hexadecimal fallback for older consumers. Bundles without a palette remain valid
 legacy imports. This repository validates identifiers, but does not duplicate the
-application's palette values. Catalog version and bundle format remain unchanged.
+application's palette values. Catalog version and bundle format are now 2; v1 imports remain supported by updated Personal consumers.
 
 | Template | Palette | Importable file |
 | --- | --- | --- |
@@ -90,3 +90,23 @@ application's palette values. Catalog version and bundle format remain unchanged
 
 The legacy hex values are retained unchanged. Adoption is explicit and SHA-pinned;
 a catalog update never changes saved projects or user-customized configurations.
+
+## Portable project chat configuration (v2)
+
+Each `siaas-project-v2` bundle includes `project.orchestration`:
+`enabled` (off by default), coordinator `instructions`, `share_results`
+(off by default), `assistant_indices` (zero-based positions in the portable
+`project.assistants` array) and `max_steps` (1–8). Up to eight unique indexes
+are allowed. Enabling orchestration requires at least one participant within
+the configured step budget.
+
+No local UUIDs, conversations, model credentials or documents travel in the
+template. SIAAS Personal maps indices to newly generated assistant IDs inside
+the destination project; each assistant retains its own model, Knowledge scope
+and Hybrid Router. Sharing output is separately opted in and grants no access
+to another assistant's files or URLs. Import does not automatically enable
+orchestration, and catalog adoption never overwrites existing customized work.
+
+v1 remains importable by updated Personal applications; older releases supporting
+only v1 cannot consume v2. Consumers adopt the reviewed catalog by exact SHA.
+Public-site adoption is a separate change.

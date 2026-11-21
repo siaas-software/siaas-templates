@@ -1,5 +1,5 @@
 {
-  "format": "siaas-project-v1",
+  "format": "siaas-project-v2",
   "project": {
     "name": "Personal Finance",
     "description": "Analyze local transactions, budgets and savings with traceable calculations and currency safeguards.",
@@ -13,6 +13,15 @@
         "sources": []
       }
     ],
-    "palette": "mint"
+    "palette": "mint",
+    "orchestration": {
+      "enabled": false,
+      "instructions": "Coordinate the selected finance assistant using local evidence; preserve currencies, sign conventions and data completeness.",
+      "assistant_indices": [
+        0
+      ],
+      "max_steps": 4,
+      "share_results": false
+    }
   }
 }
