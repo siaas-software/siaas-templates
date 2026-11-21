@@ -102,3 +102,12 @@ test('synthetic invoice fixture is internally consistent without model computati
   assert.equal(invoiced[2][5], '0.90');
   assert.equal(ordered[2][4], '0.80');
 });
+
+test('PDF synthetic acceptance fixture is a two-page searchable PDF', () => {
+  const content = readFileSync('examples/gemma-pdf-maintenance-acceptance/acceptance-case.pdf');
+  assert.equal(content.subarray(0, 8).toString('ascii'), '%PDF-1.4');
+  assert.match(content.toString('ascii'), /\/Count 2/);
+  assert.match(content.toString('ascii'), /FM-2026-017/);
+  assert.match(content.toString('ascii'), /AHU-02/);
+  assert.match(content.toString('ascii'), /%%EOF/);
+});

@@ -1,0 +1,81 @@
+%PDF-1.4
+%SIAAS synthetic fixture (all ASCII)
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Length 813 >>
+stream
+BT
+/F1 10 Tf
+13 TL
+48 780 Td
+(MAINTENANCE ACCEPTANCE - SYNTHETIC TEST DOCUMENT) Tj
+T* (Fixture ID: FM-2026-017 | Revision: 1 | 2026-11-07) Tj
+T* (Client: North Quay Workshop \(fictional company\).) Tj
+T* (Site: Warehouse A \(fictional location\).) Tj
+T* (Equipment: AHU-01 and AHU-02, rooftop air-handling units.) Tj
+T* () Tj
+T* (CONTRACTUAL ACCEPTANCE REQUIREMENTS) Tj
+T* (R1: Replace 12 F7 ventilation filters, six for each unit.) Tj
+T* (R2: Complete the work by 2026-10-31.) Tj
+T* (R3: Measure airflow on BOTH units; nominal 1,500 m3/h each.) Tj
+T* (Permissible measured interval: 1,350-1,650 m3/h for each unit.) Tj
+T* (R4: Submit a signed acceptance checklist, the service log,) Tj
+T* (serial numbers and the commissioning date.) Tj
+T* (Acceptance requires review of all supporting records.) Tj
+T* () Tj
+ET
+
+endstream
+endobj
+7 0 obj
+<< /Length 533 >>
+stream
+BT
+/F1 10 Tf
+13 TL
+48 780 Td
+(SERVICE NOTE AND EVIDENCE) Tj
+T* (Service note SN-026 date: 2026-11-03.) Tj
+T* (Supplier technician states 12 F7 filters replaced, six per unit.) Tj
+T* (Service note SN-026: included.) Tj
+T* (Signed acceptance checklist: NOT PROVIDED.) Tj
+T* (AHU-01 airflow reading: NOT PROVIDED.) Tj
+T* (AHU-02 airflow reading: NOT PROVIDED.) Tj
+T* (Serial numbers: NOT RECORDED.) Tj
+T* (Commissioning date: NOT RECORDED.) Tj
+T* () Tj
+T* (SYNTHETIC FIXTURE - NOT A REAL INSPECTION OR SUPPLIER RECORD.) Tj
+T* () Tj
+ET
+
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000046 00000 n 
+0000000095 00000 n 
+0000000158 00000 n 
+0000000284 00000 n 
+0000000410 00000 n 
+0000000478 00000 n 
+0000001341 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+1924
+%%EOF
