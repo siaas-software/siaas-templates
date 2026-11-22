@@ -62,5 +62,13 @@
       "en": "Reconcile purchase orders and invoices in Excel/CSV with independently verifiable calculations.",
       "it": "Riconcilia ordini e fatture in Excel/CSV con calcoli verificabili e controllo delle anomalie."
     }
+  },
+  "business-launch-plan": {
+    "order": 11,
+    "category": "Work",
+    "description": {
+      "en": "Plan a new business with evidence-based market research, launch tasks, financial scenarios and critical review.",
+      "it": "Progetta l'avvio di un'attività con ricerca di mercato documentata, adempimenti, scenari finanziari e revisione critica."
+    }
   }
 }

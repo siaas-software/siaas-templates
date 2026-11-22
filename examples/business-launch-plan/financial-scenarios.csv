@@ -1,0 +1,5 @@
+period,scenario,units_sold,unit_price_eur,variable_cost_per_unit_eur,fixed_operating_cost_eur,one_off_setup_cost_eur
+2027-01,base,80,25.00,10.00,900.00,1200.00
+2027-02,base,100,25.00,10.00,900.00,0.00
+2027-01,stress,50,25.00,10.00,900.00,1200.00
+2027-02,stress,65,25.00,10.00,900.00,0.00

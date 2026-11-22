@@ -11,8 +11,9 @@ const assignments = {
   'technical-documentation': 'lavender', 'materials-procurement': 'aqua',
   'pdf-maintenance-acceptance': 'lavender',
   'spreadsheet-purchase-reconciliation': 'aqua',
+  'business-launch-plan': 'lemon',
 };
-test('eight official semantic assignments and portable catalog parity', () => {
+test('nine official semantic assignments and portable catalog parity', () => {
   const catalog = JSON.parse(readFileSync('catalog.json', 'utf8'));
   assert.equal(catalog.version, 2);
   assert.deepEqual(catalog.templates.map(t => t.id).sort(), Object.keys(assignments).sort());
@@ -110,4 +111,45 @@ test('PDF synthetic acceptance fixture is a two-page searchable PDF', () => {
   assert.match(content.toString('ascii'), /FM-2026-017/);
   assert.match(content.toString('ascii'), /AHU-02/);
   assert.match(content.toString('ascii'), /%%EOF/);
+});
+
+
+test('business launch plan is portable, conservative and RC5-compatible', () => {
+  const portable = JSON.parse(readFileSync('templates/business-launch-plan.json', 'utf8'));
+  const legacy = JSON.parse(readFileSync('examples/business-launch-plan/business-launch-plan-rc5-v1.json', 'utf8'));
+  assert.equal(portable.format, 'siaas-project-v2');
+  assert.equal(legacy.format, 'siaas-project-v1');
+  assert.equal(portable.project.assistants.length, 5);
+  assert.deepEqual(legacy.project.assistants, portable.project.assistants);
+  assert.equal(legacy.project.orchestration, undefined);
+  assert.equal(portable.project.orchestration.enabled, false);
+  assert.equal(portable.project.orchestration.share_results, false);
+  assert.deepEqual(portable.project.orchestration.assistant_indices, [0, 1, 2, 3, 4]);
+  assert.equal(portable.project.orchestration.max_steps, 5);
+  for (const assistant of portable.project.assistants) {
+    assert.equal(assistant.model, null);
+    assert.deepEqual(assistant.sources, []);
+    assert(assistant.instructions.length > 200 && assistant.instructions.length <= 6000);
+  }
+});
+test('business launch synthetic financial scenarios have exact internally consistent totals', () => {
+  const lines = readFileSync('examples/business-launch-plan/financial-scenarios.csv', 'utf8').trim().split(/\r?\n/);
+  assert.equal(lines[0], 'period,scenario,units_sold,unit_price_eur,variable_cost_per_unit_eur,fixed_operating_cost_eur,one_off_setup_cost_eur');
+  const rows = lines.slice(1).map(line => line.split(','));
+  assert.equal(rows.length, 4);
+  const values = Object.fromEntries(['base', 'stress'].map(s => [s, { revenue: 0, variable: 0, fixed: 0, setup: 0 }]));
+  const cents = str => { const [whole, part = ''] = str.split('.'); return Number(whole) * 100 + Number(part.padEnd(2, '0')); };
+  for (const [period, scenario, units, price, unitCost, fixed, setup] of rows) {
+    assert.match(period, /^2027-0[12]$/);
+    const v = values[scenario];
+    assert(v, 'Unknown scenario');
+    v.revenue += Number(units) * cents(price);
+    v.variable += Number(units) * cents(unitCost);
+    v.fixed += cents(fixed);
+    v.setup += cents(setup);
+  }
+  assert.deepEqual(values.base, { revenue: 450000, variable: 180000, fixed: 180000, setup: 120000 });
+  assert.deepEqual(values.stress, { revenue: 287500, variable: 115000, fixed: 180000, setup: 120000 });
+  assert.equal(values.base.revenue - values.base.variable - values.base.fixed - values.base.setup, -30000);
+  assert.equal(values.stress.revenue - values.stress.variable - values.stress.fixed - values.stress.setup, -127500);
 });

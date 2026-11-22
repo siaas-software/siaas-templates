@@ -9,8 +9,12 @@ The canonical source for the Personal project templates used by [SIAAS Personal]
 | Computer Science Study | 3 | [computer-science-study.json](templates/computer-science-study.json) |
 | Production Planning | 1 | [production-planning.json](templates/production-planning.json) |
 | Personal Finance | 1 | [personal-finance.json](templates/personal-finance.json) |
+| Construction Cost Analysis | 1 | [construction-cost-analysis.json](templates/construction-cost-analysis.json) |
+| Technical Documentation | 1 | [technical-documentation.json](templates/technical-documentation.json) |
+| Materials & Procurement | 1 | [materials-procurement.json](templates/materials-procurement.json) |
 | PDF Maintenance Acceptance Review | 2 | [pdf-maintenance-acceptance.json](templates/pdf-maintenance-acceptance.json) |
 | Spreadsheet Purchase Order Reconciliation | 2 | [spreadsheet-purchase-reconciliation.json](templates/spreadsheet-purchase-reconciliation.json) |
+| Business Launch & Business Plan | 5 | [business-launch-plan.json](templates/business-launch-plan.json) |
 
 Download a JSON file and import it from Templates in SIAAS Personal. Files now use `siaas-project-v2` (catalog version 2); updated Personal consumers also accept legacy `siaas-project-v1` files. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
 
@@ -91,6 +95,7 @@ application's palette values. Catalog version and bundle format are now 2; v1 im
 | Materials & Procurement | aqua | [JSON](templates/materials-procurement.json) |
 | PDF Maintenance Acceptance Review | lavender | [JSON](templates/pdf-maintenance-acceptance.json) |
 | Spreadsheet Purchase Order Reconciliation | aqua | [JSON](templates/spreadsheet-purchase-reconciliation.json) |
+| Business Launch & Business Plan | lemon | [JSON](templates/business-launch-plan.json) |
 
 The legacy hex values are retained unchanged. Adoption is explicit and SHA-pinned;
 a catalog update never changes saved projects or user-customized configurations.
@@ -126,3 +131,7 @@ creating the project. Model capabilities, real tool calling and accurate answers
 must be confirmed in the application. Import the PDF and CSV fixtures locally;
 the JSON template carries no user documents. By default, coordinator and
 cross-assistant result sharing remain **disabled** and must be opted into.
+
+## Business launch and plan project
+
+The [Business Launch & Business Plan guide](docs/business-launch-plan.md) describes the five role-separated assistants, required evidence, launch and financial checks, synthetic scenario dataset, acceptance tests and limits. The v2 official template stays disabled for orchestration and result sharing until the user opts in. For **RC5** manual testing, the standalone [v1-compatible example](examples/business-launch-plan/business-launch-plan-rc5-v1.json) has the same five assistant definitions but no v2 orchestration settings; it is deliberately excluded from the catalog. Both definitions contain no user data or configured websites. This template is a preparation and drafting aid, not automated business registration, independent live market research or a guaranteed funding-grade financial model.
