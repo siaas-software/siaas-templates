@@ -70,5 +70,21 @@
       "en": "Plan a new business with evidence-based market research, launch tasks, financial scenarios and critical review.",
       "it": "Progetta l'avvio di un'attività con ricerca di mercato documentata, adempimenti, scenari finanziari e revisione critica."
     }
+  },
+  "ai-image-studio": {
+    "order": 12,
+    "category": "Work",
+    "description": {
+      "en": "Prepare prompts and validate permission-aware local image generation with stable-diffusion.cpp.",
+      "it": "Prepara prompt e verifica la generazione locale di immagini con permessi controllati e stable-diffusion.cpp."
+    }
+  },
+  "ai-video-studio": {
+    "order": 13,
+    "category": "Work",
+    "description": {
+      "en": "Plan and validate short local video generation, with FFmpeg only for deterministic processing.",
+      "it": "Pianifica e verifica la generazione locale di brevi video, con FFmpeg solo per elaborazioni deterministiche."
+    }
   }
 }
