@@ -12,8 +12,10 @@ const assignments = {
   'pdf-maintenance-acceptance': 'lavender',
   'spreadsheet-purchase-reconciliation': 'aqua',
   'business-launch-plan': 'lemon',
+  'ai-image-studio': 'rose',
+  'ai-video-studio': 'slate',
 };
-test('nine official semantic assignments and portable catalog parity', () => {
+test('eleven official semantic assignments and portable catalog parity', () => {
   const catalog = JSON.parse(readFileSync('catalog.json', 'utf8'));
   assert.equal(catalog.version, 2);
   assert.deepEqual(catalog.templates.map(t => t.id).sort(), Object.keys(assignments).sort());
@@ -152,4 +154,24 @@ test('business launch synthetic financial scenarios have exact internally consis
   assert.deepEqual(values.stress, { revenue: 287500, variable: 115000, fixed: 180000, setup: 120000 });
   assert.equal(values.base.revenue - values.base.variable - values.base.fixed - values.base.setup, -30000);
   assert.equal(values.stress.revenue - values.stress.variable - values.stress.fixed - values.stress.setup, -127500);
+});
+
+test('two RC7 media presets are portable, scoped, and never promise unavailable render tools', () => {
+  const catalog = JSON.parse(readFileSync('catalog.json', 'utf8'));
+  for (const id of ['ai-image-studio', 'ai-video-studio']) {
+    const preset = catalog.templates.find(t => t.id === id);
+    assert(preset);
+    assert.equal(preset.format, 'siaas-project-v2');
+    assert.equal(preset.project.assistants.length, 2);
+    assert.deepEqual(preset.project.orchestration.assistant_indices, [0, 1]);
+    assert.equal(preset.project.orchestration.max_steps, 2);
+    assert.equal(preset.project.orchestration.enabled, false);
+    assert.equal(preset.project.orchestration.share_results, false);
+    for (const assistant of preset.project.assistants) {
+      assert.equal(assistant.model, null);
+      assert.deepEqual(assistant.sources, []);
+      assert.match(assistant.instructions, /local|tool/i);
+      assert(assistant.instructions.length > 200 && assistant.instructions.length <= 6000);
+    }
+  }
 });

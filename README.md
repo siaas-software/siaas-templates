@@ -15,6 +15,8 @@ The canonical source for the Personal project templates used by [SIAAS Personal]
 | PDF Maintenance Acceptance Review | 2 | [pdf-maintenance-acceptance.json](templates/pdf-maintenance-acceptance.json) |
 | Spreadsheet Purchase Order Reconciliation | 2 | [spreadsheet-purchase-reconciliation.json](templates/spreadsheet-purchase-reconciliation.json) |
 | Business Launch & Business Plan | 5 | [business-launch-plan.json](templates/business-launch-plan.json) |
+| AI Image Studio (RC7 test preset) | 2 | [ai-image-studio.json](templates/ai-image-studio.json) |
+| AI Video Studio (RC7 test preset) | 2 | [ai-video-studio.json](templates/ai-video-studio.json) |
 
 Download a JSON file and import it from Templates in SIAAS Personal. Files now use `siaas-project-v2` (catalog version 2); updated Personal consumers also accept legacy `siaas-project-v1` files. Each assistant owns a `sources` array of public URL strings and has `model: null`, allowing a recommendation for the destination computer. Color belongs only to the project. Documents, local folders, local paths, downloaded content, embeddings, chats and indexing metadata are never exported.
 
@@ -96,6 +98,8 @@ application's palette values. Catalog version and bundle format are now 2; v1 im
 | PDF Maintenance Acceptance Review | lavender | [JSON](templates/pdf-maintenance-acceptance.json) |
 | Spreadsheet Purchase Order Reconciliation | aqua | [JSON](templates/spreadsheet-purchase-reconciliation.json) |
 | Business Launch & Business Plan | lemon | [JSON](templates/business-launch-plan.json) |
+| AI Image Studio (RC7 test preset) | rose | [JSON](templates/ai-image-studio.json) |
+| AI Video Studio (RC7 test preset) | slate | [JSON](templates/ai-video-studio.json) |
 
 The legacy hex values are retained unchanged. Adoption is explicit and SHA-pinned;
 a catalog update never changes saved projects or user-customized configurations.
@@ -135,3 +139,7 @@ cross-assistant result sharing remain **disabled** and must be opted into.
 ## Business launch and plan project
 
 The [Business Launch & Business Plan guide](docs/business-launch-plan.md) describes the five role-separated assistants, required evidence, launch and financial checks, synthetic scenario dataset, acceptance tests and limits. The v2 official template stays disabled for orchestration and result sharing until the user opts in. For **RC5** manual testing, the standalone [v1-compatible example](examples/business-launch-plan/business-launch-plan-rc5-v1.json) has the same five assistant definitions but no v2 orchestration settings; it is deliberately excluded from the catalog. Both definitions contain no user data or configured websites. This template is a preparation and drafting aid, not automated business registration, independent live market research or a guaranteed funding-grade financial model.
+
+## RC7 media generation acceptance presets (not yet available in RC5/RC6)
+
+[AI Image Studio](templates/ai-image-studio.json) and [AI Video Studio](templates/ai-video-studio.json) are **official test configurations** for the proposed RC7 runtime, not a claim that image or video native tools are already implemented. They are model-agnostic, contain no executable code, weights, local paths, private sources or credentials, and have orchestration and result sharing disabled by default. stable-diffusion.cpp is the only proposed generative backend; FFmpeg performs deterministic video processing only. See [the acceptance guide](docs/media-generation-acceptance.md). Do not automatically update a Personal consumer before its runtime and template schema pass acceptance.
