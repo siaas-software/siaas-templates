@@ -1,0 +1,4 @@
+po_number,line_id,item_code,ordered_qty,unit_price,currency
+PO-2026-104,1,FILT-A,12,18.50,EUR
+PO-2026-104,2,SEAL-B,8,7.25,EUR
+PO-2026-105,1,BOLT-C,20,0.80,EUR

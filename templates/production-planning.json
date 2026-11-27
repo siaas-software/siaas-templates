@@ -1,5 +1,5 @@
 {
-  "format": "siaas-project-v1",
+  "format": "siaas-project-v2",
   "project": {
     "name": "Production Planning",
     "description": "Analyze local production orders, inventory, materials and operational data with traceable calculations.",
@@ -13,6 +13,15 @@
         "sources": []
       }
     ],
-    "palette": "slate"
+    "palette": "slate",
+    "orchestration": {
+      "enabled": false,
+      "instructions": "Coordinate the production analyst using confirmed dataset schemas, relationships and deterministic calculations; never invent BOM or stock values.",
+      "assistant_indices": [
+        0
+      ],
+      "max_steps": 4,
+      "share_results": false
+    }
   }
 }

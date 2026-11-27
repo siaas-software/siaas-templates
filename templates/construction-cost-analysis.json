@@ -1,5 +1,5 @@
 {
-  "format": "siaas-project-v1",
+  "format": "siaas-project-v2",
   "project": {
     "name": "Construction Cost Analysis",
     "description": "Analyze construction estimates, bill-of-quantities and cost variances from local spreadsheets.",
@@ -13,6 +13,15 @@
         "sources": []
       }
     ],
-    "palette": "peach"
+    "palette": "peach",
+    "orchestration": {
+      "enabled": false,
+      "instructions": "Coordinate the authorized construction cost analyst, requiring verified local spreadsheet calculations, units, estimates and source evidence.",
+      "assistant_indices": [
+        0
+      ],
+      "max_steps": 4,
+      "share_results": false
+    }
   }
 }

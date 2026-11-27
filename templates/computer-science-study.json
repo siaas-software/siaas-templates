@@ -1,5 +1,5 @@
 {
-  "format": "siaas-project-v1",
+  "format": "siaas-project-v2",
   "project": {
     "name": "Computer Science Study",
     "description": "Study programming, algorithms and software development.",
@@ -33,6 +33,17 @@
         "model": null
       }
     ],
-    "palette": "sky"
+    "palette": "sky",
+    "orchestration": {
+      "enabled": false,
+      "instructions": "Coordinate the programming, algorithms and TypeScript tutors in the selected order. Keep their teaching roles and source scopes separate, and verify shared conclusions.",
+      "assistant_indices": [
+        0,
+        1,
+        2
+      ],
+      "max_steps": 4,
+      "share_results": false
+    }
   }
 }

@@ -46,5 +46,21 @@
       "en": "Compare material quantities, supplier quotations and purchase requirements using local data.",
       "it": "Confronta quantità di materiali, offerte dei fornitori e fabbisogni di acquisto con dati locali."
     }
+  },
+  "pdf-maintenance-acceptance": {
+    "order": 9,
+    "category": "Work",
+    "description": {
+      "en": "Review maintenance acceptance PDFs with two evidence-focused assistants and report missing records.",
+      "it": "Esamina PDF di collaudo manutentivo con due assistenti, verificando requisiti e documenti mancanti."
+    }
+  },
+  "spreadsheet-purchase-reconciliation": {
+    "order": 10,
+    "category": "Work",
+    "description": {
+      "en": "Reconcile purchase orders and invoices in Excel/CSV with independently verifiable calculations.",
+      "it": "Riconcilia ordini e fatture in Excel/CSV con calcoli verificabili e controllo delle anomalie."
+    }
   }
 }
